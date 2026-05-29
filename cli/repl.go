@@ -433,6 +433,10 @@ func (this *Client) HandleBacktraceByUnwind(args []string) {
 		fmt.Printf("Failed to read stack memory: %v\n", err)
 		return
 	}
+	if bytesRead == 0 {
+		fmt.Println("Failed to read stack memory: 0 bytes read")
+		return
+	}
 	unwind_buf.Data = stack_data[:bytesRead]
 	unwind_buf.StackSize = 8192
 	unwind_buf.DynSize = uint64(bytesRead)

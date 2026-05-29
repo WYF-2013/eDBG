@@ -72,8 +72,7 @@ assets:
 
 .PHONY: genbtf
 genbtf:
-	$(CMD_BPFTOOL) gen min_core_btf assets/rock5b-5.10-f9d1b1529-arm64.btf assets/rock5b-5.10-arm64_min.btf assets/ebpf_module.o
-	$(CMD_BPFTOOL) gen min_core_btf assets/a12-5.10-arm64.btf assets/a12-5.10-arm64_min.btf assets/ebpf_module.o
+	$(CMD_BPFTOOL) gen min_core_btf assets/kernel-61-aarch64.btf assets/kernel-61-aarch64_min.btf assets/ebpf_module.o
 
 .PHONY: build
 build:
